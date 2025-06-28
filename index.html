@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <h1 id="title">Simon Game</h1>
+
+    <div class="form">
+        <form>
+            <div>
+                <label for="form" id="title-form">Enter Your Name:</label>
+            </div>
+            <div>
+                <input type="text" id="input-name" placeholder="Your Nickname" maxlength="12" autocomplete="off"/>
+            </div>
+            <div>
+                <button type="button" onclick="gameStart()" id="submit">Play!</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="notification hidden">
+        <p>Please enter your username!!</p>
+    </div>
+
+    <div class="end-notification hidden">
+        <p>Your score: </p>
+        <p><span id="final-score"></span></p>
+    </div>
+
+    <button type="button" onclick="startOver()" id="try-again" class="hidden">Try Again</button>
+
+    <div class="container hidden">
+        <div class="row">
+            <div type="button" id="blue" class="btn blue"></div>
+            <div type="button" id="red" class="btn red"></div>
+        </div>
+        <div class="row">
+            <div type="button" id="green" class="btn green"></div>
+            <div type="button" id="yellow" class="btn yellow"></div>
+        </div>
+        
+    </div>
+
+    <button onclick="showLeaderboard()" type=button class="leaderboard-btn">Leaderboard</button>
+    <div class="leaderboard-card hidden">
+        <div class="card">
+        <h2>Leaderboard Top 5</h2>
+            <ol id="leaderboard-list"> 
+                <!-- THIS IS THE LEADERBOARD FORMAT -->
+                <li><span id="name1">Name 1</span> - <span id="pts1">pts</span></li>
+                <li><span id="name2">Name 2</span> - <span id="pts2">pts</span></li>
+                <li><span id="name3">Name 3</span> - <span id="pts3">pts</span></li>
+                <li><span id="name4">Name 4</span> - <span id="pts4">pts</span></li>
+                <li><span id="name5">Name 5</span> - <span id="pts5">pts</span></li>
+            </ol>
+        </div>
+    </div>
+    
+    <div class="score-counter hidden">
+        <p>Player: <span id="username"></span></p>
+        <p>Score: <span id="score"></span></p>
+    </div>
+
+    <footer>
+        <p>Hackathon Project by: fathirachmann, fuadfzy, TitikSetianingsih23</p>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./script.js" charset="utf-8"></script>
+</body>
+</html>

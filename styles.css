@@ -1,0 +1,249 @@
+/* Body CSS */
+body {
+    text-align: center;
+    background-color: rgb(8, 8, 68);
+}
+
+#title{
+    color: white;
+    font-family: "Press Start 2P", system-ui;
+    font-size: 50px;
+    margin: 5% 5%
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    font-family: "Press Start 2P", system-ui;
+    color: white;
+    font-size: 10px;
+}
+
+.notification {
+    font-family: "Press Start 2P";
+    color: white;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    margin-top: 100px;
+}
+
+.end-notification {
+    font-family: "Press Start 2P";
+    color: white;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5%;
+    margin-top: 10%
+}
+
+/* CSS for Form */
+.form {
+    display: block; /* Change to block or none */
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+#title-form {
+    display: block;
+    color: whitesmoke;
+    font-family: "Press Start 2P", sans-serif;
+    font-size: 1rem;
+    margin-bottom: 70px;
+}
+
+input {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+input[type=text] {
+    font-family: "Pixelify Sans";
+    text-align: center;
+    color: white;
+    font-size: 1.5em;
+    border: none;
+    border-bottom: 2px solid white;
+    background-color: transparent;
+    width: 10%;
+}
+
+input:focus {
+    background-color: transparent;
+    outline: none;
+    border-bottom: 2px solid white;
+}
+
+#submit {
+    font-family: "Pixelify Sans";
+    font-size: 1.5rem;
+    color: white;
+    padding: 0.2% 1%;
+    border: 2px solid white;
+    background-color: transparent;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#submit:hover {
+    font-family: "Pixelify Sans";
+    font-size: 1.5rem;
+    color: rgb(8, 8, 68);
+    padding: 0.2% 1%;
+    border: 2px solid black;
+    background-color: white;
+    border-radius: 8px;
+}
+
+#try-again {
+    font-family: "Pixelify Sans";
+    font-size: 1.5rem;
+    color: white;
+    padding: 0.2% 1%;
+    border: 2px solid white;
+    background-color: transparent;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#try-again:hover {
+    font-family: "Pixelify Sans";
+    font-size: 1.5rem;
+    color: rgb(8, 8, 68);
+    padding: 0.2% 1%;
+    border: 2px solid black;
+    background-color: white;
+    border-radius: 8px;
+}
+
+/* CSS for Score */
+.score-counter {
+    font-family: "Press Start 2P";
+    font-size: 20px;
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    color: white;
+    padding: 5px 20px;
+    text-align: left;
+    width: 100%;
+}
+
+/* CSS for Leaderboard */
+.leaderboard-btn {
+    font-family: "Press Start 2P";
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10 ;
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 8px;
+    padding: 0.5% 1%;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.leaderboard-btn:hover {
+    font-family: "Press Start 2P";
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10;
+    background-color: white;
+    color: rgb(8, 8, 68);
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 0.5% 1%;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.leaderboard-card {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    z-index: 999;
+}
+
+.card {
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 12px;
+    padding: 20px 17px;
+    width: 250px;
+    font-family: sans-serif;
+}
+
+.card h2 {
+    font-family: "Press Start 2P";
+    color: white;
+    margin-top: 0;
+    font-size: 18px;
+    text-align: center;
+}
+
+.card ol {
+    font-family: "Pixelify Sans";
+    color: white;
+    margin: 0;
+    padding-left: 20px;
+}
+
+.card li {
+    margin: 6px 2px;
+    text-align: left;
+}
+
+.hidden {
+    display: none;
+}
+
+/* CSS for Buttons or Core Content */
+.btn {
+    margin: 25px;
+    display: inline-block;
+    height: 200px;
+    width: 200px;
+    border: 10px solid black;
+    border-radius: 20%;
+}
+
+.container { /* change to block or none */
+    width: 50%;
+    margin: auto;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+/* Effect */
+
+.pressed {
+    box-shadow: 0 0 20px white;
+    background-color: grey;
+}
+
+.game-over {
+    background-color: red;
+    opacity: 0.8;
+}
