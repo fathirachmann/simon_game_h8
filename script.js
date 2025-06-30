@@ -15,14 +15,16 @@ $("input").keypress(function(event) {
 
 function gameStart() {
     let vUsername = $("#input-name").val()
-    
+
     if (vUsername.length === 0) {
         let wrongAudio = new Audio("sounds/wrong.mp3");
         wrongAudio.play();
-        $(".notification").removeClass("hidden");
+        $(".notification").toggleClass("hidden");
+        
         setTimeout(function() {
-            $(".notification").addClass("hidden");
-        }, 1000);
+            $(".notification").toggleClass("hidden");
+        }, 1500);
+
     } else {
         let startAudio = new Audio("sounds/start.mp3");
         startAudio.play();
@@ -32,7 +34,7 @@ function gameStart() {
         $(".container").toggleClass("hidden");
         $("#username").text(vUsername);
         $("#score").text(`${score} pts`);
-        nextSequence();
+        nextColor();
     }
 }
 
@@ -50,7 +52,7 @@ function checkAnswer(currentLevel) {
             score += 10
             $("#score").text(`${score} pts`);
             setTimeout(function() {
-            nextSequence();
+            nextColor();
             }, 500);
         }
     } else {
@@ -68,7 +70,7 @@ function checkAnswer(currentLevel) {
     }
 }
 
-function nextSequence() { 
+function nextColor() { 
     let randomNumber = Math.floor(Math.random() * 4);
     let randomPickedColor = buttonColors[randomNumber];
     gamePattern.push(randomPickedColor);
@@ -108,12 +110,57 @@ function startOver() {
 
 //Leaderboard Script: (use vanilla DOM as jQuery cannot use localstorage)
 
-let database = [{}]
-
 function showLeaderboard() {
     $(".leaderboard-card").toggleClass("hidden")
 }
 
-function addData() {
+function createData() {
+    let startDatabase = []
+    let id = 1
+    let data = JSON.parse(localStorage.getItem("database"))
+    let username = $("#input-name").val()
+
+    if (data === null) {
+        let obj = {
+            id: id,
+            username: username,
+            score: score
+        }
+        startDatabase.push(obj)
+        localStorage.setItem("database", JSON.stringify(startDatabase));
+    } else if (data.length > 0) {
+        let flag = false
+        let obj = {}
+        for (i = 0; i < data.length; i++) {
+            let perObj = data[i]
+            if (perObj.username === username && score > perObj.score) {
+                perObj.score = score;
+                localStorage.setItem("database", JSON.stringify(data));
+            } else {
+                flag = true
+                break;
+            }
+        }
+        
+        if (flag === true) {
+            id = data[data.length - 1].id + 1
+            obj = {
+                id: id,
+                username: username,
+                score: score
+            }   
+            data.push(obj)
+            localStorage.setItem("database", JSON.stringify(data))
+            flag = false
+        }
+    }
+    startOver()
+}
+
+function readData() {
+    let data = JSON.parse(localStorage.getItem("database"))
+    // for (i = 0; i < data.length; i++) {
+    //     let score = 
+    // }
 
 }
