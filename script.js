@@ -55,7 +55,7 @@ function checkAnswer(currentLevel) {
         }
     } else {
         $("h1").text("Game Over!");
-        var wrongAudio = new Audio("sounds/wrong.mp3");
+        let wrongAudio = new Audio("sounds/wrong.mp3");
         wrongAudio.play();
         $("body").addClass("game-over");
         setTimeout(function () {
