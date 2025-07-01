@@ -213,7 +213,33 @@ input:focus {
     width: 200px;
     border: 10px solid black;
     border-radius: 20%;
+    box-shadow: 
+        10px 10px 20px rgba(0, 0, 0, 0.4), /* Outer shadow for depth */
+        -10px -10px 20px rgba(255, 255, 255, 0.3), /* Highlight for 3D pop */
+        inset 5px 5px 10px rgba(0, 0, 0, 0.2), /* Inner shadow for button surface */
+        inset -5px -5px 10px rgba(255, 255, 255, 0.2); /* Inner highlight */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth interaction */
 }
+
+.btn:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 
+        12px 12px 25px rgba(0, 0, 0, 0.5), /* Stronger shadow on hover */
+        -12px -12px 25px rgba(255, 255, 255, 0.4), /* Stronger highlight */
+        inset 5px 5px 10px rgba(0, 0, 0, 0.2), 
+        inset -5px -5px 10px rgba(255, 255, 255, 0.2);
+}
+
+
+.btn:active {
+    transform: translateY(2px); /* Pressed effect */
+    box-shadow: 
+        5px 5px 10px rgba(0, 0, 0, 0.3), /* Reduced shadow when pressed */
+        -5px -5px 10px rgba(255, 255, 255, 0.2),
+        inset 8px 8px 15px rgba(0, 0, 0, 0.3), /* Deeper inner shadow */
+        inset -8px -8px 15px rgba(255, 255, 255, 0.3);
+}
+
 
 .container { /* change to block or none */
     width: 50%;
