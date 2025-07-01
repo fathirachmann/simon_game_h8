@@ -75,13 +75,22 @@ function nextColor() {
     let randomPickedColor = buttonColors[randomNumber];
     gamePattern.push(randomPickedColor);
 
-    setTimeout(function() {
-        userPattern = [];
-        gameLevel++;
-        $("#title").text(`Level ${gameLevel}`);
-        $("#" + randomPickedColor).fadeIn(100).fadeOut(100).fadeIn(100);
-        playSound(randomPickedColor);
-    }, 500)
+    userPattern = [];
+    gameLevel++;
+    $("#title").text(`Level ${gameLevel}`);
+
+    // Memainkan ulang seluruh urutan gamePattern
+    let index = 0;
+    function playSequence() {
+        if (index < gamePattern.length) {
+            let color = gamePattern[index];
+            $("#" + color).fadeIn(100).fadeOut(100).fadeIn(100);
+            playSound(color);
+            index++;
+            setTimeout(playSequence, 600); // Jeda 600ms antar warna
+        }
+    }
+    setTimeout(playSequence, 500); // Mulai urutan setelah jeda 500ms
 }
 
 function playSound(name) {
@@ -111,56 +120,71 @@ function startOver() {
 //Leaderboard Script: (use vanilla DOM as jQuery cannot use localstorage)
 
 function showLeaderboard() {
+    readData()
     $(".leaderboard-card").toggleClass("hidden")
 }
 
 function createData() {
-    let startDatabase = []
-    let id = 1
-    let data = JSON.parse(localStorage.getItem("database"))
-    let username = $("#input-name").val()
+    let startDatabase = [];
+    let id = 1;
+    let data = JSON.parse(localStorage.getItem("database"));
+    let username = $("#input-name").val();
 
     if (data === null) {
         let obj = {
             id: id,
             username: username,
             score: score
-        }
-        startDatabase.push(obj)
+        };
+        startDatabase.push(obj);
         localStorage.setItem("database", JSON.stringify(startDatabase));
     } else if (data.length > 0) {
-        let flag = false
-        let obj = {}
-        for (i = 0; i < data.length; i++) {
-            let perObj = data[i]
+        let flag = false;
+        for (let i = 0; i < data.length; i++) {
+            let perObj = data[i];
             if (perObj.username === username && score > perObj.score) {
                 perObj.score = score;
                 localStorage.setItem("database", JSON.stringify(data));
-            } else {
-                flag = true
+                flag = true;
                 break;
             }
         }
         
-        if (flag === true) {
-            id = data[data.length - 1].id + 1
-            obj = {
+        if (!flag) {
+            id = data[data.length - 1].id + 1;
+            let obj = {
                 id: id,
                 username: username,
                 score: score
-            }   
-            data.push(obj)
-            localStorage.setItem("database", JSON.stringify(data))
-            flag = false
+            };   
+            data.push(obj);
+            localStorage.setItem("database", JSON.stringify(data));
         }
     }
-    startOver()
+    startOver();
 }
 
 function readData() {
-    let data = JSON.parse(localStorage.getItem("database"))
-    // for (i = 0; i < data.length; i++) {
-    //     let score = 
-    // }
+    let data = JSON.parse(localStorage.getItem("database")) || [];
+    let leaderboardList = document.querySelector(".card ol");
+    leaderboardList.innerHTML = ""; // Bersihkan daftar yang ada
+
+    // Urutkan data berdasarkan skor secara menurun
+    data.sort((a, b) => b.score - a.score);
+
+    // Tampilkan 5 skor tertinggi
+    let maxEntries = Math.min(data.length, 5);
+    for (let i = 0; i < maxEntries; i++) {
+        let listItem = document.createElement("li");
+        listItem.textContent = `${data[i].username} - ${data[i].score} pts`;
+        leaderboardList.appendChild(listItem);
+    }
+
+    // Jika kurang dari 5 entri, isi dengan placeholder
+    for (let i = maxEntries; i < 5; i++) {
+        let listItem = document.createElement("li");
+        listItem.textContent = `Empty - 0 pts`;
+        leaderboardList.appendChild(listItem);
+    }
 
 }
