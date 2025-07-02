@@ -183,11 +183,12 @@ function createData() {
             if (perObj.username === username && score > perObj.score) {
                 perObj.score = score;
                 localStorage.setItem("database", JSON.stringify(data));
-                flag = true;
+                break;
+            } else if (perObj.username === username && score < perObj.score) {
                 break;
             }
         }
-        if (!flag) {
+        if (flag) {
             id = data[data.length - 1].id + 1;
             let obj = {
                 id: id,
