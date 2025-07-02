@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simon Game</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -50,17 +51,16 @@
         
     </div>
 
-    <button onclick="showLeaderboard()" type=button class="leaderboard-btn">Leaderboard</button>
+    <button onclick="showLeaderboard()" type=button class="leaderboard-btn"><i class="fa fa-trophy"></i></button>
     <div class="leaderboard-card hidden">
         <div class="card">
         <h2>Leaderboard Top 5</h2>
             <ol id="leaderboard-list"> 
-                <!-- THIS IS THE LEADERBOARD FORMAT -->
-                <li><span id="name1">Name 1</span> - <span id="pts1">pts</span></li>
-                <li><span id="name2">Name 2</span> - <span id="pts2">pts</span></li>
-                <li><span id="name3">Name 3</span> - <span id="pts3">pts</span></li>
-                <li><span id="name4">Name 4</span> - <span id="pts4">pts</span></li>
-                <li><span id="name5">Name 5</span> - <span id="pts5">pts</span></li>
+                <li>Empty - 0 pts</li>
+                <li>Empty - 0 pts</li>
+                <li>Empty - 0 pts</li>
+                <li>Empty - 0 pts</li>
+                <li>Empty - 0 pts</li>
             </ol>
         </div>
     </div>

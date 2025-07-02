@@ -1,5 +1,4 @@
 // Core Gameplay Script:
-
 let buttonColors = ["red", "blue", "green", "yellow"];
 let gamePattern = [];
 let userPattern = [];
@@ -7,12 +6,20 @@ let gameLevel = 0;
 let score = 0
 let username = ""
 
+// Restriction untuk keypress "Enter"
 $("input").keypress(function(event) {
     if (event.keycode === 13 || event.which === 13) {
         event.preventDefault(); 
     }
 });
 
+$("input").keypress(function(event) {
+    if (event.keycode === 32 || event.which === 32) {
+        event.preventDefault(); 
+    }
+});
+
+// Function gameStart() untuk memulai game
 function gameStart() {
     let vUsername = $("#input-name").val()
 
@@ -38,14 +45,8 @@ function gameStart() {
     }
 }
 
-$(".btn").click(function() { 
-    let userChosenColour = $(this).attr("id");
-    userPattern.push(userChosenColour);
-    playSound(userChosenColour);
-    animatePress(userChosenColour);
-    checkAnswer(userPattern.length - 1);
-});
 
+// function untuk mengecek apakah jawaban sesuai sequence atau salah
 function checkAnswer(currentLevel) {
     if (gamePattern[currentLevel] === userPattern[currentLevel]) {
         if (userPattern.length === gamePattern.length) {
@@ -70,11 +71,11 @@ function checkAnswer(currentLevel) {
     }
 }
 
+// function untuk generate warna berikutnya
 function nextColor() { 
     let randomNumber = Math.floor(Math.random() * 4);
     let randomPickedColor = buttonColors[randomNumber];
     gamePattern.push(randomPickedColor);
-
     userPattern = [];
     gameLevel++;
     $("#title").text(`Level ${gameLevel}`);
@@ -93,11 +94,22 @@ function nextColor() {
     setTimeout(playSequence, 500); // Mulai urutan setelah jeda 500ms
 }
 
+// DOM jQuery untuk klik button warna
+$(".btn").click(function() { 
+    let userChosenColour = $(this).attr("id");
+    userPattern.push(userChosenColour);
+    playSound(userChosenColour);
+    animatePress(userChosenColour);
+    checkAnswer(userPattern.length - 1);
+});
+
+// Function untuk memainkan suara button
 function playSound(name) {
     let colorAudio = new Audio(`sounds/${name}.mp3`);
     colorAudio.play();
 }
 
+// Function untuk animasi button
 function animatePress(color) {
     $(`.${color}`).addClass("pressed");
     setTimeout(function () {
@@ -105,6 +117,7 @@ function animatePress(color) {
     }, 50);
 }
 
+// Function untuk memulai ulang setelah game over
 function startOver() {
     gameLevel = 0;
     gamePattern = []
@@ -117,13 +130,38 @@ function startOver() {
     $(".score-counter").toggleClass("hidden");
 }
 
-//Leaderboard Script: (use vanilla DOM as jQuery cannot use localstorage)
+//Leaderboard Script: (use vanilla DOM as jQuery cannot use localStorage)
 
 function showLeaderboard() {
-    readData()
     $(".leaderboard-card").toggleClass("hidden")
 }
 
+// Function read data leaderboard
+function readData() {
+    let data = JSON.parse(localStorage.getItem("database")) || [];
+    let leaderboardList = document.querySelector(".card ol");
+    leaderboardList.innerHTML = ""; // Bersihkan daftar yang ada
+
+    // Urutkan data berdasarkan skor secara menurun
+    data.sort((a, b) => b.score - a.score);
+
+    // Tampilkan 5 skor tertinggi
+    let maxEntries = Math.min(data.length, 5);
+    for (let i = 0; i < maxEntries; i++) {
+        let listItem = document.createElement("li");
+        listItem.textContent = `${data[i].username} - ${data[i].score} pts`;
+        leaderboardList.appendChild(listItem);
+    }
+
+    // Jika kurang dari 5 entri, isi dengan placeholder
+    for (let i = maxEntries; i < 5; i++) {
+        let listItem = document.createElement("li");
+        listItem.textContent = `Empty - 0 pts`;
+        leaderboardList.appendChild(listItem);
+    }
+}
+
+// Function database leaderboard
 function createData() {
     let startDatabase = [];
     let id = 1;
@@ -149,7 +187,6 @@ function createData() {
                 break;
             }
         }
-        
         if (!flag) {
             id = data[data.length - 1].id + 1;
             let obj = {
@@ -161,30 +198,9 @@ function createData() {
             localStorage.setItem("database", JSON.stringify(data));
         }
     }
+    readData();
     startOver();
 }
 
-function readData() {
-    let data = JSON.parse(localStorage.getItem("database")) || [];
-    let leaderboardList = document.querySelector(".card ol");
-    leaderboardList.innerHTML = ""; // Bersihkan daftar yang ada
+readData();
 
-    // Urutkan data berdasarkan skor secara menurun
-    data.sort((a, b) => b.score - a.score);
-
-    // Tampilkan 5 skor tertinggi
-    let maxEntries = Math.min(data.length, 5);
-    for (let i = 0; i < maxEntries; i++) {
-        let listItem = document.createElement("li");
-        listItem.textContent = `${data[i].username} - ${data[i].score} pts`;
-        leaderboardList.appendChild(listItem);
-    }
-
-    // Jika kurang dari 5 entri, isi dengan placeholder
-    for (let i = maxEntries; i < 5; i++) {
-        let listItem = document.createElement("li");
-        listItem.textContent = `Empty - 0 pts`;
-        leaderboardList.appendChild(listItem);
-    }
-
-}

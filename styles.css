@@ -145,8 +145,8 @@ input:focus {
     color: white;
     border: 2px solid white;
     border-radius: 8px;
-    padding: 0.5% 1%;
-    font-size: 20px;
+    padding: 0.8% 1%;
+    font-size: 40px;
     cursor: pointer;
 }
 
@@ -155,19 +155,19 @@ input:focus {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    z-index: 10;
-    background-color: white;
+    z-index: 10 ;
+    background: white;
     color: rgb(8, 8, 68);
-    border: 2px solid black;
+    border: 2px solid rgb(8, 8, 68);
     border-radius: 8px;
-    padding: 0.5% 1%;
-    font-size: 20px;
+    padding: 0.8% 1%;
+    font-size: 40px;
     cursor: pointer;
 }
 
 .leaderboard-card {
     position: fixed;
-    bottom: 80px;
+    bottom: 120px;
     right: 20px;
     z-index: 999;
 }
