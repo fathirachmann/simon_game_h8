@@ -131,7 +131,7 @@ input:focus {
   color: white;
   padding: 5px 20px;
   text-align: left;
-  width: 100%;
+  width: auto;
 }
 
 /* CSS for Leaderboard */
@@ -344,7 +344,7 @@ input:focus {
     padding: 10px;
     position: fixed;
     bottom: 100px;
-    left: 5px;
+    right: 5px;
   }
 
   .leaderboard-btn {
@@ -358,6 +358,7 @@ input:focus {
 
   .leaderboard-btn:hover {
     font-size: 25px;
+    width: auto;
     padding: 10px;
     bottom: 10px;
     right: 10px;
