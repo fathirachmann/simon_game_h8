@@ -1,304 +1,299 @@
 /* Body CSS */
 body {
-    text-align: center;
-    background-color: rgb(8, 8, 68);
+  text-align: center;
+  background-color: rgb(8, 8, 68);
 }
 
-#title{
-    color: white;
-    font-family: "Press Start 2P", system-ui;
-    font-size: 50px;
-    margin: 5% 5%
+#title {
+  color: white;
+  font-family: "Press Start 2P", system-ui;
+  font-size: 50px;
+  margin: 5% 5%;
 }
 
 footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    text-align: center;
-    width: 100%;
-    font-family: "Press Start 2P", system-ui;
-    color: white;
-    font-size: 10px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  font-family: "Press Start 2P", system-ui;
+  color: white;
+  font-size: 10px;
 }
 
 .notification {
-    font-family: "Press Start 2P";
-    color: white;
-    position: fixed;
-    text-align: center;
-    width: 100%;
-    margin-top: 100px;
+  font-family: "Press Start 2P";
+  color: white;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  margin-top: 100px;
 }
 
 .end-notification {
-    font-family: "Press Start 2P";
-    color: white;
-    width: 100%;
-    text-align: center;
-    margin-bottom: 5%;
-    margin-top: 10%
+  font-family: "Press Start 2P";
+  color: white;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 5%;
+  margin-top: 10%;
 }
 
 /* CSS for Form */
 .form {
-    display: block; /* Change to block or none */
-    align-items: center;
-    justify-content: center;
-    margin-top: 10%;
+  display: block; /* Change to block or none */
+  align-items: center;
+  justify-content: center;
+  margin-top: 10%;
 }
 
 #title-form {
-    display: block;
-    color: whitesmoke;
-    font-family: "Press Start 2P", sans-serif;
-    font-size: 1rem;
-    margin-bottom: 70px;
+  display: block;
+  color: whitesmoke;
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 1rem;
+  margin-bottom: 70px;
 }
 
 input {
-    display: block;
-    margin: 0 auto;
-    margin-bottom: 20px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
 }
 
-input[type=text] {
-    font-family: "Pixelify Sans";
-    text-align: center;
-    color: white;
-    font-size: 1.2em;
-    border: none;
-    border-bottom: 2px solid white;
-    background-color: transparent;
-    width: 10%;
+input[type="text"] {
+  font-family: "Pixelify Sans";
+  text-align: center;
+  color: white;
+  font-size: 1.2em;
+  border: none;
+  border-bottom: 2px solid white;
+  background-color: transparent;
+  width: 10%;
 }
 
 input:focus {
-    background-color: transparent;
-    outline: none;
-    border-bottom: 2px solid white;
+  background-color: transparent;
+  outline: none;
+  border-bottom: 2px solid white;
 }
 
 #submit {
-    font-family: "Pixelify Sans";
-    font-size: 1.5rem;
-    color: white;
-    padding: 0.2% 1%;
-    border: 2px solid white;
-    background-color: transparent;
-    border-radius: 8px;
-    cursor: pointer;
+  font-family: "Pixelify Sans";
+  font-size: 1.5rem;
+  color: white;
+  padding: 0.2% 1%;
+  border: 2px solid white;
+  background-color: transparent;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 #submit:hover {
-    font-family: "Pixelify Sans";
-    font-size: 1.5rem;
-    color: rgb(8, 8, 68);
-    padding: 0.2% 1%;
-    border: 2px solid black;
-    background-color: white;
-    border-radius: 8px;
+  font-family: "Pixelify Sans";
+  font-size: 1.5rem;
+  color: rgb(8, 8, 68);
+  padding: 0.2% 1%;
+  border: 2px solid black;
+  background-color: white;
+  border-radius: 8px;
 }
 
 #try-again {
-    font-family: "Pixelify Sans";
-    font-size: 1.5rem;
-    color: white;
-    padding: 0.2% 1%;
-    border: 2px solid white;
-    background-color: transparent;
-    border-radius: 8px;
-    cursor: pointer;
+  font-family: "Pixelify Sans";
+  font-size: 1.5rem;
+  color: white;
+  padding: 0.2% 1%;
+  border: 2px solid white;
+  background-color: transparent;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 #try-again:hover {
-    font-family: "Pixelify Sans";
-    font-size: 1.5rem;
-    color: rgb(8, 8, 68);
-    padding: 0.2% 1%;
-    border: 2px solid black;
-    background-color: white;
-    border-radius: 8px;
+  font-family: "Pixelify Sans";
+  font-size: 1.5rem;
+  color: rgb(8, 8, 68);
+  padding: 0.2% 1%;
+  border: 2px solid black;
+  background-color: white;
+  border-radius: 8px;
 }
 
 /* CSS for Score */
 .score-counter {
-    font-family: "Press Start 2P";
-    font-size: 20px;
-    position: fixed;
-    bottom: 50px;
-    left: 5px;
-    color: white;
-    padding: 5px 20px;
-    text-align: left;
-    width: 100%;
+  font-family: "Press Start 2P";
+  font-size: 20px;
+  position: fixed;
+  bottom: 50px;
+  left: 5px;
+  color: white;
+  padding: 5px 20px;
+  text-align: left;
+  width: 100%;
 }
 
 /* CSS for Leaderboard */
 .leaderboard-btn {
-    font-family: "Press Start 2P";
-    position: fixed;
-    bottom: 70px;
-    right: 20px;
-    z-index: 10 ;
-    background: transparent;
-    color: white;
-    border: 2px solid white;
-    border-radius: 8px;
-    padding: 0.8% 1%;
-    font-size: 40px;
-    cursor: pointer;
+  font-family: "Press Start 2P";
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  z-index: 10;
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 8px;
+  padding: 0.8% 1%;
+  font-size: 40px;
+  cursor: pointer;
 }
 
 .leaderboard-btn:hover {
-    font-family: "Press Start 2P";
-    position: fixed;
-    bottom: 70px;
-    right: 20px;
-    z-index: 10 ;
-    background: white;
-    color: rgb(8, 8, 68);
-    border: 2px solid rgb(8, 8, 68);
-    border-radius: 8px;
-    padding: 0.8% 1%;
-    font-size: 40px;
-    cursor: pointer;
+  font-family: "Press Start 2P";
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  z-index: 10;
+  background: white;
+  color: rgb(8, 8, 68);
+  border: 2px solid rgb(8, 8, 68);
+  border-radius: 8px;
+  padding: 0.8% 1%;
+  font-size: 40px;
+  cursor: pointer;
 }
 
 .leaderboard-card {
-    position: fixed;
-    bottom: 160px;
-    right: 20px;
-    z-index: 999;
+  position: absolute;
+  bottom: 160px;
+  right: 20px;
+  z-index: 999;
 }
 
 .card {
-    background: transparent;
-    border: 2px solid white;
-    border-radius: 12px;
-    padding: 20px 17px;
-    width: 250px;
-    font-family: sans-serif;
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 12px;
+  padding: 20px 17px;
+  width: 250px;
+  font-family: sans-serif;
 }
 
 .card h2 {
-    font-family: "Press Start 2P";
-    color: white;
-    margin-top: 0;
-    font-size: 18px;
-    text-align: center;
+  font-family: "Press Start 2P";
+  color: white;
+  margin-top: 0;
+  font-size: 18px;
+  text-align: center;
 }
 
 .card ol {
-    font-family: "Pixelify Sans";
-    color: white;
-    margin: 0;
-    padding-left: 20px;
+  font-family: "Pixelify Sans";
+  color: white;
+  margin: 0;
+  padding-left: 20px;
 }
 
 .card li {
-    margin: 6px 2px;
-    text-align: left;
+  margin: 6px 2px;
+  text-align: left;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 /* CSS for Buttons or Core Content */
 .btn {
-    margin: 25px;
-    display: inline-block;
-    height: 200px;
-    width: 200px;
-    border: 10px solid black;
-    border-radius: 20%;
-    box-shadow: 
-        10px 10px 20px rgba(0, 0, 0, 0.4), /* Outer shadow for depth */
-        -10px -10px 20px rgba(255, 255, 255, 0.3), /* Highlight for 3D pop */
-        inset 5px 5px 10px rgba(0, 0, 0, 0.2), /* Inner shadow for button surface */
-        inset -5px -5px 10px rgba(255, 255, 255, 0.2); /* Inner highlight */
-    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth interaction */
+  margin: 25px;
+  display: inline-block;
+  height: 200px;
+  width: 200px;
+  border: 10px solid black;
+  border-radius: 20%;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4),
+    /* Outer shadow for depth */ -10px -10px 20px rgba(255, 255, 255, 0.3),
+    /* Highlight for 3D pop */ inset 5px 5px 10px rgba(0, 0, 0, 0.2),
+    /* Inner shadow for button surface */ inset -5px -5px 10px
+      rgba(255, 255, 255, 0.2); /* Inner highlight */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth interaction */
 }
 
 .btn:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
-    box-shadow: 
-        12px 12px 25px rgba(0, 0, 0, 0.5), /* Stronger shadow on hover */
-        -12px -12px 25px rgba(255, 255, 255, 0.4), /* Stronger highlight */
-        inset 5px 5px 10px rgba(0, 0, 0, 0.2), 
-        inset -5px -5px 10px rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 12px 12px 25px rgba(0, 0, 0, 0.5),
+    /* Stronger shadow on hover */ -12px -12px 25px rgba(255, 255, 255, 0.4),
+    /* Stronger highlight */ inset 5px 5px 10px rgba(0, 0, 0, 0.2),
+    inset -5px -5px 10px rgba(255, 255, 255, 0.2);
 }
-
 
 .btn:active {
-    transform: translateY(2px); /* Pressed effect */
-    box-shadow: 
-        5px 5px 10px rgba(0, 0, 0, 0.3), /* Reduced shadow when pressed */
-        -5px -5px 10px rgba(255, 255, 255, 0.2),
-        inset 8px 8px 15px rgba(0, 0, 0, 0.3), /* Deeper inner shadow */
-        inset -8px -8px 15px rgba(255, 255, 255, 0.3);
+  transform: translateY(2px); /* Pressed effect */
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3),
+    /* Reduced shadow when pressed */ -5px -5px 10px rgba(255, 255, 255, 0.2),
+    inset 8px 8px 15px rgba(0, 0, 0, 0.3),
+    /* Deeper inner shadow */ inset -8px -8px 15px rgba(255, 255, 255, 0.3);
 }
 
-
-.container { /* change to block or none */
-    width: 50%;
-    margin: auto;
+.container {
+  /* change to block or none */
+  width: 50%;
+  margin: auto;
 }
 
 .red {
-    background-color: red;
+  background-color: red;
 }
 
 .green {
-    background-color: green;
+  background-color: green;
 }
 
 .blue {
-    background-color: blue;
+  background-color: blue;
 }
 
 .yellow {
-    background-color: yellow;
+  background-color: yellow;
 }
 
 /* Effect */
 
 .pressed {
-    box-shadow: 0 0 20px white;
-    background-color: grey;
+  box-shadow: 0 0 20px white;
+  background-color: grey;
 }
 
 .game-over {
-    background-color: red;
-    opacity: 0.8;
+  background-color: red;
+  opacity: 0.8;
 }
 
 @media only screen and (max-width: 720px) {
-    #title {
-        font-size: 30px;
-        margin-top: 70px;
-    }
+  #title {
+    font-size: 30px;
+    margin-top: 70px;
+  }
 
-    #title-form {
-        font-size: 0.8rem ;
-        margin-top: 200px;
-    }
+  #title-form {
+    font-size: 0.8rem;
+    margin-top: 200px;
+  }
 
-    input[type=text] {
-        font-size: 1rem;
-        width: auto;
+  input[type="text"] {
+    font-size: 1rem;
+    width: auto;
+  }
 
-    }
+  footer {
+    font-size: 7px;
+  }
 
-    footer {
-       font-size: 7px; 
-    }
-
-
-    .notification{
-        font-size: 10px ;
-    }
+  .notification {
+    font-size: 10px;
+  }
 
   .container {
     width: 100;
@@ -311,16 +306,17 @@ input:focus {
     margin: 10px;
   }
 
-    .form {
+  .form {
     margin-top: 100px;
   }
 
-    #title-form {
+  #title-form {
     font-size: 0.8rem;
     margin-bottom: 30px;
   }
 
-    #submit, #try-again {
+  #submit,
+  #try-again {
     font-size: 1rem;
     padding: 5px 15px;
   }
@@ -334,15 +330,15 @@ input:focus {
     font-size: 1rem;
     padding: 5px 15px;
   }
-    .container {
+  .container {
     width: 100%;
   }
-    .btn {
+  .btn {
     width: 100px;
     height: 100px;
     margin: 10px;
   }
-    .score-counter {
+  .score-counter {
     text-align: center;
     font-size: 10px;
     padding: 10px;
@@ -351,7 +347,7 @@ input:focus {
     left: 5px;
   }
 
-     .leaderboard-btn {
+  .leaderboard-btn {
     font-size: 25px;
     padding: 10px;
     bottom: 10px;
@@ -367,25 +363,32 @@ input:focus {
     right: 10px;
   }
 
-.leaderboard-card {
-    position: fixed;
+  .leaderboard-card {
+    position: absolute;
     bottom: 100px;
     top: 100px;
     left: 50px;
     right: 50px;
     z-index: 999;
-}
-.card{
+    text-align: center;
+  }
+  .card {
     background: rgb(8, 8, 68);
-    display: block;
-    margin: 425px auto;
-}
-    .notification, .end-notification {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 300px;
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .notification, .end-notification {
     font-size: 12px;
     margin-top: 200px;
   }
 
-    footer {
+  footer {
     font-size: 7px;
   }
 }
