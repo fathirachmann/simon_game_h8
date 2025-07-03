@@ -61,7 +61,7 @@ function checkAnswer(currentLevel) {
         let wrongAudio = new Audio("sounds/wrong.mp3");
         wrongAudio.play();
         $("body").addClass("game-over");
-        setTimeout(function () {
+        setTimeout(function() {
             $("body").removeClass("game-over"); 
         }, 50);
         $(".container").toggleClass("hidden");
@@ -99,7 +99,7 @@ $(".btn").click(function() {
     let userChosenColour = $(this).attr("id");
     userPattern.push(userChosenColour);
     playSound(userChosenColour);
-    animatePress(userChosenColour);
+    // animatePress(userChosenColour); // UNCOMMENT JIKA INGIN MANIPULASI ANIMASI (CHECK CSS)
     checkAnswer(userPattern.length - 1);
 });
 
@@ -109,7 +109,7 @@ function playSound(name) {
     colorAudio.play();
 }
 
-// Function untuk animasi button
+// Function untuk animasi button (UNCOMMENT JIKA INGIN MANIPULASI ANIMASI, CHECK CSS)
 function animatePress(color) {
     $(`.${color}`).addClass("pressed");
     setTimeout(function () {
@@ -177,7 +177,7 @@ function createData() {
         startDatabase.push(obj);
         localStorage.setItem("database", JSON.stringify(startDatabase));
     } else if (data.length > 0) {
-        let flag = false;
+        let flag = true;
         for (let i = 0; i < data.length; i++) {
             let perObj = data[i];
             if (perObj.username === username && score > perObj.score) {
