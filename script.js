@@ -41,7 +41,7 @@ function gameStart() {
         $(".container").toggleClass("hidden");
         $("#username").text(vUsername);
         $("#score").text(`${score} pts`);
-        nextColor();
+        setTimeout(nextColor(), 1500)
     }
 }
 
